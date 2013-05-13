@@ -23,3 +23,21 @@ describe ProcessMonitor, "#pcpu" do
     pm.pcpu.should eq "0.0"
   end
 end
+
+describe ProcessMonitor, "#pmem" do 
+  it "should return the percentage" do
+    pm = ProcessMonitor.new(5501)
+    pm.stub(:ps_it) { "  0.0 \n"}
+    pm.pmem.should eq "0.0"
+  end
+end
+
+describe ProcessMonitor, "#list" do
+  it "should list various process monitor insstances" do
+    ProcessMonitor.stub(:ps_list) { (0..10).to_a.join("\n") }
+    pms = ProcessMonitor.list
+    (0..10).each do |i|
+      pms[i].process_id.should eq i.to_s
+    end
+  end
+end
