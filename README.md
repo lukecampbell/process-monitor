@@ -14,7 +14,9 @@ Usage
 
 Inside a Gemfile place this: (not ready to upload to rubygems yet)
 
-gem 'process-monitor' ,github: 'lukecampbell/process-monitor'
+```
+gem 'process-monitor', github: 'lukecampbell/process-monitor'
+```
 
 I haven't flushed out the API yet but see the rspec for examples.
 
