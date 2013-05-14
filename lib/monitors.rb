@@ -12,6 +12,7 @@ class Monitor
   def initialize(loc)
     @loc = loc
     @status = :ready
+    @stats = {}
     @thread = nil
   end
 
